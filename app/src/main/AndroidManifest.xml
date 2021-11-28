@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProjectPSI">
         <activity
+            android:name=".HalamanVideoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HalamanArtikelActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SidebarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListArtikelActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
