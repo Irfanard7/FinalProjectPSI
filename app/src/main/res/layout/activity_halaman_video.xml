@@ -21,12 +21,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/strip_menu"
+        android:id="@+id/back_menu"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="24dp"
         android:background="#666666"
-        android:src="@drawable/strip_menu"
+        android:src="@drawable/back_menu"
         app:layout_constraintStart_toStartOf="@+id/tv_header"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,16 +45,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/back_menu"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="64dp"
-        android:background="@color/bg_utama"
-        android:src="@drawable/back_menu"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_author"

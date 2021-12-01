@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">FinalProjectPSI</string>
+    <string name="label_banner_1">Artikel Terbaru</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label_banner_2">Artikel Video Terbaru</string>
 </resources>

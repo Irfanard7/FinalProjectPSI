@@ -1,135 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/bg_utama"
     tools:context=".HalamanArtikelActivity">
 
-    <TextView
-        android:id="@+id/tv_header"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#666666"
-        android:gravity="center"
-        android:text="HEADER"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent">
 
-    <ImageButton
-        android:id="@+id/strip_menu"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="24dp"
-        android:background="#666666"
-        android:src="@drawable/strip_menu"
-        app:layout_constraintStart_toStartOf="@+id/tv_header"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tv_header"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#666666"
+            android:gravity="center"
+            android:text="HEADER"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_judul"
-        android:layout_width="230dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="88dp"
-        android:gravity="center"
-        android:paddingHorizontal="5dp"
-        android:text="Judul"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageButton
+            android:id="@+id/back_menu"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            android:background="#666666"
+            android:src="@drawable/back_menu"
+            app:layout_constraintStart_toStartOf="@+id/tv_header"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/back_menu"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="64dp"
-        android:background="@color/bg_utama"
-        android:src="@drawable/back_menu"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tv_judul"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="88dp"
+            android:gravity="center"
+            android:paddingHorizontal="5dp"
+            android:text="Judul"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_author"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="128dp"
-        android:paddingStart="30dp"
-        android:text="Author: Harian Kompas"
-        android:textColor="@color/white"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_date"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
-        android:layout_marginEnd="24dp"
-        android:gravity="right"
-        android:paddingEnd="30dp"
-        android:text="Date: 30/02/2021"
-        android:textColor="@color/white"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_content"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:paddingHorizontal="30dp"
-        android:text="LALALALALALALALALALALALALLALALALALALALLALALALALALALA
+        <TextView
+            android:id="@+id/tv_author"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="128dp"
+            android:paddingStart="30dp"
+            android:text="Author: Lola"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="128dp"
+            android:layout_marginEnd="24dp"
+            android:gravity="right"
+            android:paddingEnd="30dp"
+            android:text="Date: 30/02/2021"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:paddingHorizontal="30dp"
+            android:text="LALALALALALALALALALALALALLALALALALALALLALALALALALALA
 \n\nLALALALALALALALALALALALALLALALALALALALLALALALALALALA
 \n\nLALALALALALALALALALALALALLALALALALALALLALALALALALALA"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_author" />
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_author" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#666666"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent">
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:background="#666666"
-            android:src="@drawable/icon_artikel" />
-
-        <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="left"
-            android:layout_marginStart="60dp"
-            android:background="#666666"
-            android:src="@drawable/icon_home" />
-
-        <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="right"
-            android:layout_marginEnd="60dp"
-            android:background="#666666"
-            android:src="@drawable/icon_youtube" />
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

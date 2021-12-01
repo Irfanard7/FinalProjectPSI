@@ -1,11 +1,11 @@
-package com.example.finalprojectpsi
+package com.example.finalprojectpsi.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
-import com.smarteist.autoimageslider.SliderView
+import com.example.finalprojectpsi.R
 import com.smarteist.autoimageslider.SliderViewAdapter
 import com.squareup.picasso.Picasso
 import java.util.*

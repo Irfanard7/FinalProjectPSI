@@ -8,4 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="bg_utama">#484848</color>
+    <color name="list_color">#79B4FF</color>
 </resources>
