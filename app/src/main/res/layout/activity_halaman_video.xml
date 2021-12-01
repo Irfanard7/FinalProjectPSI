@@ -58,7 +58,7 @@
 
     <TextView
         android:id="@+id/tv_author"
-        android:layout_width="150dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="128dp"
@@ -103,15 +103,49 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:paddingHorizontal="30dp"
-        android:textSize="12sp"
         android:text="Apa itu varian Omicron?
 \n\nSama seperti varian Delta, Organisasi Kesehatan Dunia (WHO) memasukan Omicron dalam kategori Variant of Concern (VOC) atau varian yang harus diwaspadai. Begini daya varian baru Covid-19 ini.
 \n\n#Omicron
 \n#VarianBaruCovid19
 \n#VideoBerita"
         android:textColor="@color/white"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/video" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="128dp"
+        android:background="#666666"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_deskripsi">
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="#666666"
+            android:src="@drawable/icon_artikel" />
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="left"
+            android:layout_marginStart="60dp"
+            android:background="#666666"
+            android:src="@drawable/icon_home" />
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="right"
+            android:layout_marginEnd="60dp"
+            android:background="#666666"
+            android:src="@drawable/icon_youtube" />
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
