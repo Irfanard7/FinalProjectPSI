@@ -29,8 +29,6 @@ class MySliderImageAdapter(var onClick : View.OnClickListener) :
     }
 
     override fun onBindViewHolder(viewHolder: VH, position: Int) {
-        //load image into view
-
         Picasso.get().load("https://img.youtube.com/vi/"+mSliderItems[position]+"/0.jpg").fit().into(viewHolder.imageView)
         viewHolder.itemView.setOnClickListener(onClick)
 
