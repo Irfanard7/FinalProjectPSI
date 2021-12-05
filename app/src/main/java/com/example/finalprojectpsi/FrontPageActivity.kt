@@ -39,11 +39,7 @@ class FrontPageActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun setImageInSlider(images: ArrayList<String>, imageSlider: SliderView) {
-        val adapter = MySliderImageAdapter()
-        adapter.renewItems(images)
-        imageSlider.setSliderAdapter(adapter)
-        imageSlider.isAutoCycle = true
-        imageSlider.startAutoCycle()
+
     }
 
     override fun onClick(view: View?) {

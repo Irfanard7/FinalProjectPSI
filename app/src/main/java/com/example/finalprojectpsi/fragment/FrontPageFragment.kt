@@ -1,5 +1,7 @@
 package com.example.finalprojectpsi.fragment
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,9 +10,25 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import com.example.finalprojectpsi.R
+import com.example.finalprojectpsi.adapter.ListArtikel
 import com.example.finalprojectpsi.adapter.MySliderImageAdapter
+import com.example.finalprojectpsi.model.Artikel
+import com.example.finalprojectpsi.model.VideoArtikel
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.database
+import com.google.firebase.database.ktx.getValue
+import com.google.firebase.ktx.Firebase
 import com.smarteist.autoimageslider.SliderView
 import org.w3c.dom.Text
+import android.content.ActivityNotFoundException
+import androidx.core.view.allViews
+
+import com.example.finalprojectpsi.MainActivity
+import java.lang.Exception
+
 
 class FrontPageFragment : Fragment() ,View.OnClickListener {
     lateinit var littleBox1 : TextView
@@ -18,8 +36,14 @@ class FrontPageFragment : Fragment() ,View.OnClickListener {
     lateinit var littleBox3 : TextView
     lateinit var littleBox4 : TextView
 
+    lateinit var data : ArrayList<String>
+    lateinit var db : DatabaseReference
+    lateinit var radapter : MySliderImageAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        data = ArrayList()
+        db = Firebase.database.reference.child("video")
     }
 
     override fun onCreateView(
@@ -28,21 +52,45 @@ class FrontPageFragment : Fragment() ,View.OnClickListener {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_front_page, container, false)
         val imageSlider = view.findViewById<SliderView>(R.id.imageSlider)
-        val imageList: ArrayList<String> = ArrayList()
-        imageList.add("https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg")
-        imageList.add("https://images.ctfassets.net/hrltx12pl8hq/4plHDVeTkWuFMihxQnzBSb/aea2f06d675c3d710d095306e377382f/shutterstock_554314555_copy.jpg")
-        imageList.add("https://media.istockphoto.com/photos/child-hands-formig-heart-shape-picture-id951945718?k=6&m=951945718&s=612x612&w=0&h=ih-N7RytxrTfhDyvyTQCA5q5xKoJToKSYgdsJ_mHrv0=")
-        setImageInSlider(imageList, imageSlider)
         view.findViewById<TextView>(R.id.Terkonfirmasi).text = "Terkonfirmasi : "+323424
         view.findViewById<TextView>(R.id.Sembuh).text = "Sembuh : " + 123415
         view.findViewById<TextView>(R.id.Meninggal).text = "Meninggal : " + 9425
+
+        val dataListener = object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                var ind =0
+                for (art in snapshot.children){
+                    data.add(art.child("videoId").value.toString())
+                }
+
+                setImageInSlider(data, imageSlider)
+                radapter.notifyDataSetChanged()
+
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(context, "gagal memuat artikel", Toast.LENGTH_LONG).show()
+            }
+        }
+        db.addValueEventListener(dataListener)
+
         return view
     }
 
     private fun setImageInSlider(images: ArrayList<String>, imageSlider: SliderView) {
-        val adapter = MySliderImageAdapter()
-        adapter.renewItems(images)
-        imageSlider.setSliderAdapter(adapter)
+        radapter = MySliderImageAdapter {
+            var ind = imageSlider.currentPagePosition
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.setPackage("com.google.android.youtube")
+            intent.data = Uri.parse("http://www.youtube.com/watch?v=" + data[ind])
+            try {
+                startActivity(intent)
+            } catch (e: Exception) {
+                Toast.makeText(context, "Gagal membuka Youtube!", Toast.LENGTH_LONG).show()
+            }
+        }
+        radapter.renewItems(images)
+        imageSlider.setSliderAdapter(radapter)
         imageSlider.isAutoCycle = true
         imageSlider.startAutoCycle()
     }

@@ -10,7 +10,7 @@ import com.smarteist.autoimageslider.SliderViewAdapter
 import com.squareup.picasso.Picasso
 import java.util.*
 
-class MySliderImageAdapter() :
+class MySliderImageAdapter(var onClick : View.OnClickListener) :
     SliderViewAdapter<MySliderImageAdapter.VH>() {
     private var mSliderItems = ArrayList<String>()
     fun renewItems(sliderItems: ArrayList<String>) {
@@ -31,10 +31,8 @@ class MySliderImageAdapter() :
     override fun onBindViewHolder(viewHolder: VH, position: Int) {
         //load image into view
 
-        Picasso.get().load(mSliderItems[position]).fit().into(viewHolder.imageView)
-        viewHolder.itemView.setOnClickListener {
-            Toast.makeText(viewHolder.itemView.context, "Click was heard!", Toast.LENGTH_SHORT).show()
-        }
+        Picasso.get().load("https://img.youtube.com/vi/"+mSliderItems[position]+"/0.jpg").fit().into(viewHolder.imageView)
+        viewHolder.itemView.setOnClickListener(onClick)
 
     }
 
