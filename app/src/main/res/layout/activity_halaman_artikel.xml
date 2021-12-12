@@ -36,13 +36,12 @@
 
         <TextView
             android:id="@+id/tv_judul"
-            android:layout_width="230dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="64dp"
-            android:layout_marginEnd="88dp"
-            android:gravity="center"
-            android:paddingHorizontal="5dp"
+            android:paddingHorizontal="30dp"
             android:text="Judul"
+            android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -50,25 +49,24 @@
             app:layout_constraintTop_toTopOf="parent" />
 
 
-
         <TextView
             android:id="@+id/tv_author"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="128dp"
+            android:layout_marginTop="16dp"
             android:paddingStart="30dp"
             android:text="Author: Lola"
             android:textColor="@color/white"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_judul" />
 
         <TextView
             android:id="@+id/tv_date"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="128dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="24dp"
             android:gravity="right"
             android:paddingEnd="30dp"
@@ -76,14 +74,13 @@
             android:textColor="@color/white"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_judul" />
 
         <TextView
             android:id="@+id/tv_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:gravity="center"
             android:paddingHorizontal="30dp"
             android:text="LALALALALALALALALALALALALLALALALALALALLALALALALALALA
 \n\nLALALALALALALALALALALALALLALALALALALALLALALALALALALA
